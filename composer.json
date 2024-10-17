@@ -1,0 +1,23 @@
+{
+    "name": "user/tdd-book",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Paulo Matos",
+            "email": "paulo.matos@forpeople.io"
+        }
+    ],
+    "require": {
+        "php": "8.3",
+        "phpunit/phpunit": "^11"
+    }
+}
