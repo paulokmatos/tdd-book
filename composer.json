@@ -13,11 +13,14 @@
     "authors": [
         {
             "name": "Paulo Matos",
-            "email": "paulo.matos@forpeople.io"
+            "email": "paulokmatos361@gmail.com"
         }
     ],
     "require": {
-        "php": "8.3",
+        "php": "^8.3"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.6",
         "phpunit/phpunit": "^11"
     }
 }

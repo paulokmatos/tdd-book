@@ -41,7 +41,7 @@ class CalculadoraDeSalarioTest extends TestCase
     {
         $calculadora = new CalculadoraDeSalario();
         $dba = new Funcionario(
-            "Cão Pequeno",
+            "Elowyin",
             500.0,
             Cargos::DBA
         );
