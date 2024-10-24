@@ -2,10 +2,14 @@
 
 namespace App\CDC\Loja\FluxoDeCaixa;
 
+use App\CDC\Exemplos\IRelogio;
+
 class GeradorDeNotaFiscal
 {
+    /** @param AcaoAposGerarNota[] $acoes */
     public function __construct(
-        private NFDao $nfDao
+        private array $acoes,
+        private IRelogio $relogio
     )
     {
     }
@@ -15,13 +19,13 @@ class GeradorDeNotaFiscal
         $nf = new NotaFiscal(
             $pedido->cliente,
             $pedido->valorTotal * 0.94,
-            new \DateTime()
+            $this->relogio->hoje()
         );
 
-        if($this->nfDao->persiste()) {
-            return $nf;
+        foreach ($this->acoes as $acao) {
+            $acao->executar($nf);
         }
 
-        return null;
+        return $nf;
     }
 }

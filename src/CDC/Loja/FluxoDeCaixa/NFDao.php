@@ -2,9 +2,9 @@
 
 namespace App\CDC\Loja\FluxoDeCaixa;
 
-class NFDao
+class NFDao implements AcaoAposGerarNota
 {
-    public function persiste(): bool
+    public function executar(NotaFiscal $notaFiscal): bool
     {
         return false;
     }
